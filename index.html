@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AJ Danboise | Plumbing, Heating, Cooling &amp; Electrical</title>
+<meta name="description" content="Call, schedule service, see specials and leave a review for AJ Danboise. Plumbing, heating, cooling and electrical in Farmington Hills and Metro Detroit since 1925.">
+<meta name="theme-color" content="#001F63">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AJ Danboise | Done Right Since 1925">
+<meta property="og:description" content="Plumbing, heating, cooling and electrical in Metro Detroit. Call, book online, or check out our current specials.">
+<meta property="og:image" content="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Raleway:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #00153F;
+    --navy: #001F63;
+    --blue: #0032A0;
+    --sky: #318DDE;
+    --green: #468514;
+    --green-light: #5E9732;
+    --green-dark: #2D5A0F;
+    --yellow: #F0E045;
+    --ink: #0E1A33;
+    --muted: #5B6578;
+    --card: #FFFFFF;
+    --card-border: rgba(0, 50, 160, 0.10);
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    min-height: 100vh;
+    font-family: "Raleway", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: #F2F6FB;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(120% 80% at 85% 0%, rgba(49, 141, 222, 0.45) 0%, rgba(49, 141, 222, 0) 55%),
+      linear-gradient(165deg, var(--blue) 0%, var(--navy) 55%, var(--navy-900) 100%);
+    padding: 40px 20px 104px;
+    text-align: center;
+  }
+  .hero .waves {
+    position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 90px; display: block;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+  .logo { width: min(330px, 82%); height: auto; display: block; margin: 0 auto; }
+  .trades {
+    margin-top: 14px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .headline {
+    margin-top: 22px;
+    font-family: "Arvo", Georgia, serif; font-weight: 700;
+    font-size: clamp(26px, 7.4vw, 34px); line-height: 1.12; letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .headline em { font-style: normal; color: var(--yellow); }
+  .subline { margin-top: 10px; font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.82); }
+
+  .rating {
+    margin: 22px auto 0;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 16px 9px 10px; border-radius: 999px;
+    background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    font-size: 13.5px; font-weight: 600;
+    transition: background .2s ease;
+  }
+  .rating:hover { background: rgba(255, 255, 255, 0.16); }
+  .rating .g { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: grid; place-items: center; flex: none; }
+  .rating .stars { color: #FBBC04; letter-spacing: 1px; font-size: 14px; }
+  .rating b { font-weight: 800; }
+
+  /* ---------- Content ---------- */
+  main { position: relative; z-index: 2; max-width: 520px; margin: -56px auto 0; padding: 0 16px 40px; }
+
+  .primary { display: grid; gap: 12px; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; min-height: 62px; padding: 14px 20px; border: 0; border-radius: var(--radius);
+    font-family: "Arvo", Georgia, serif; font-weight: 700; font-size: 17px; letter-spacing: .04em; text-transform: uppercase;
+    cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .btn-call {
+    color: #fff; background: linear-gradient(180deg, var(--green-light), var(--green));
+    box-shadow: 0 10px 24px -8px rgba(45, 90, 15, 0.65), inset 0 -3px 0 rgba(0, 0, 0, 0.18);
+  }
+  .btn-book {
+    color: var(--navy); background: var(--yellow);
+    box-shadow: 0 10px 24px -8px rgba(184, 167, 0, 0.7), inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+  }
+  .btn small { display: block; font-family: "Raleway", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .02em; text-transform: none; opacity: .85; margin-top: 2px; }
+  .btn .stack { text-align: left; line-height: 1.05; }
+
+  .hours {
+    margin: 14px 0 0; text-align: center; font-size: 13px; font-weight: 600; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-light); box-shadow: 0 0 0 4px rgba(94, 151, 50, 0.18); }
+
+  .section-label {
+    margin: 30px 4px 12px; font-size: 11.5px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--blue);
+  }
+  .links { display: grid; gap: 10px; }
+  .link {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: var(--radius);
+    background: var(--card); border: 1px solid var(--card-border);
+    box-shadow: 0 1px 2px rgba(0, 31, 99, 0.04), 0 6px 18px -10px rgba(0, 31, 99, 0.18);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .link:hover { transform: translateY(-2px); border-color: rgba(0, 50, 160, 0.28); box-shadow: 0 14px 28px -14px rgba(0, 31, 99, 0.35); }
+  .link .ico {
+    width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
+    background: #EAF1F9; color: var(--blue);
+  }
+  .link .ico svg { width: 22px; height: 22px; }
+  .link .ico.green { background: #EEF5E6; color: var(--green); }
+  .link .ico.yellow { background: #FBF7D2; color: #8A7B00; }
+  .link .txt { flex: 1; min-width: 0; }
+  .link .t, .link .d { display: block; }
+  .link .t { font-weight: 800; font-size: 15.5px; color: var(--ink); }
+  .link .d { font-size: 13px; font-weight: 500; color: var(--muted); margin-top: 2px; }
+  .link .chev { width: 18px; height: 18px; color: #A3AEC2; flex: none; transition: transform .18s ease, color .18s ease; }
+  .link:hover .chev { transform: translateX(3px); color: var(--blue); }
+  .link.feature { background: linear-gradient(135deg, #fff 0%, #FFFCE6 100%); border-color: rgba(240, 224, 69, 0.7); }
+  .tag {
+    display: inline-block; margin-left: 6px; padding: 2px 7px; border-radius: 6px; vertical-align: 2px;
+    font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    background: var(--yellow); color: var(--navy);
+  }
+
+  .social { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
+  .social a {
+    width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--navy); color: #fff;
+    box-shadow: 0 8px 18px -10px rgba(0, 31, 99, 0.8);
+    transition: transform .18s ease, background .18s ease;
+  }
+  .social a:hover { transform: translateY(-2px); background: var(--blue); }
+  .social svg { width: 22px; height: 22px; }
+
+  .trust {
+    margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center;
+  }
+  .trust div { padding: 12px 6px; border-radius: 12px; background: rgba(0, 50, 160, 0.05); }
+  .trust b { display: block; font-family: "Arvo", Georgia, serif; font-size: 18px; color: var(--blue); }
+  .trust span { display: block; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
+
+  footer { margin-top: 26px; text-align: center; font-size: 12.5px; line-height: 1.6; color: var(--muted); }
+  footer .mark { width: 34px; height: auto; display: block; margin: 0 auto 8px; opacity: .9; }
+  footer a { color: var(--blue); font-weight: 700; }
+
+  .reveal { opacity: 0; transform: translateY(10px); animation: in .5s ease forwards; }
+  @keyframes in { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+    .btn, .link, .social a { transition: none; }
+  }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <img class="logo" src="assets/logo-white.svg" alt="AJ Danboise" width="450" height="66">
+    <h1 class="headline">100+ years of keeping <em>Michigan homes</em> running</h1>
+    <p class="subline">Farmington Hills &amp; Metro Detroit &middot; Done right since 1925</p>
+    <a class="rating" href="https://maps.app.goo.gl/p64wAb8WSLSo1Q7bA" target="_blank" rel="noopener" data-track="rating">
+      <span class="g" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.7 13.3l7.9 6.2C12.5 13.6 17.8 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.5 5.8c4.4-4 6.8-10 6.8-17.2z"/><path fill="#FBBC05" d="M10.6 28.5c-.5-1.4-.8-2.9-.8-4.5s.3-3.1.8-4.5l-7.9-6.2C1 16.6 0 20.2 0 24s1 7.4 2.7 10.7l7.9-6.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.8-5.8l-7.5-5.8c-2.1 1.4-4.8 2.3-8.3 2.3-6.2 0-11.5-4.1-13.4-9.8l-7.9 6.2C6.6 42.6 14.6 48 24 48z"/></svg>
+      </span>
+      <span><b>4.8</b> <span class="stars" aria-hidden="true">★★★★★</span> &nbsp;2,981 Google reviews</span>
+    </a>
+  </div>
+  <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 C 240 20, 480 110, 760 64 S 1220 10, 1440 52 L1440 120 L0 120 Z" fill="#5E9732" opacity=".9"/>
+    <path d="M0 84 C 300 40, 560 120, 820 80 S 1240 34, 1440 70 L1440 120 L0 120 Z" fill="#318DDE" opacity=".55"/>
+    <path d="M0 98 C 320 64, 620 124, 900 96 S 1260 66, 1440 88 L1440 120 L0 120 Z" fill="#F2F6FB"/>
+  </svg>
+</header>
+
+<main>
+  <div class="primary">
+    <a class="btn btn-call reveal" href="tel:+12482365999" data-track="call">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+      <span class="stack">Call (248) 236-5999<small>Talk to a real person, same-day service</small></span>
+    </a>
+    <button class="btn btn-book reveal" style="animation-delay:.06s" type="button" id="book" data-track="schedule">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M16 2.5v4M8 2.5v4M3 10h18M8.5 15l2.3 2.2L15.5 13"/></svg>
+      <span class="stack">Schedule Service<small>Book online in under a minute</small></span>
+    </button>
+  </div>
+  <p class="hours"><span class="dot" aria-hidden="true"></span>Same-day service &middot; Mon–Fri, 8 AM – 5 PM</p>
+
+  <p class="section-label">Save &amp; learn more</p>
+  <div class="links">
+    <a class="link feature reveal" style="animation-delay:.1s" href="https://ajdanboise.com/coupons/?utm_source=links&utm_medium=social&utm_campaign=link_page" data-track="specials">
+      <span class="ico yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+      <span class="txt"><span class="t">Specials &amp; Coupons <span class="tag">Save</span></span><span class="d">Current deals on HVAC, plumbing &amp; electrical</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </a>
+    <a class="link reveal" style="animation-delay:.14s" href="https://ajdanboise.com/financing/?utm_source=links&utm_medium=social&utm_campaign=link_page" data-track="financing">
+      <span class="ico green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg></span>
+      <span class="txt"><span class="t">Financing Options</span><span class="d">Comfortable monthly payments</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </a>
+    <a class="link reveal" style="animation-delay:.18s" href="https://ajdanboise.com/?utm_source=links&utm_medium=social&utm_campaign=link_page" data-track="website">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg></span>
+      <span class="txt"><span class="t">Visit Our Website</span><span class="d">Services, maintenance plans &amp; more</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <p class="section-label">Reviews</p>
+  <div class="links">
+    <a class="link reveal" style="animation-delay:.22s" href="https://search.google.com/local/writereview?placeid=ChIJfRNui0CxJIgRBYZ4YueezYY" target="_blank" rel="noopener" data-track="leave_review">
+      <span class="ico yellow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z"/></svg></span>
+      <span class="txt"><span class="t">Leave Us a Google Review</span><span class="d">Takes 30 seconds and means the world to our team</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </a>
+    <a class="link reveal" style="animation-delay:.26s" href="https://maps.app.goo.gl/p64wAb8WSLSo1Q7bA" target="_blank" rel="noopener" data-track="read_reviews">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.4-5.6A8.5 8.5 0 1 1 21 12z"/><path d="M8.5 10.5h7M8.5 14h4.5"/></svg></span>
+      <span class="txt"><span class="t">Read Our Reviews</span><span class="d">4.8 stars from 2,981 Michigan homeowners</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <div class="social">
+    <a href="https://www.facebook.com/ajdanboise/" target="_blank" rel="noopener" aria-label="AJ Danboise on Facebook" data-track="facebook">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21.9v-7.6h2.6l.4-3h-3V9.4c0-.9.3-1.5 1.5-1.5h1.6V5.2c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6v7.6z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/ajdanboise/" target="_blank" rel="noopener" aria-label="AJ Danboise on Instagram" data-track="instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+
+  <div class="trust">
+    <div><b>1925</b><span>Family roots</span></div>
+    <div><b>4.8★</b><span>Google rating</span></div>
+    <div><b>BBB</b><span>Accredited</span></div>
+  </div>
+
+  <footer>
+    <img class="mark" src="assets/aj-mark.svg" alt="" width="305" height="227">
+    AJ Danboise Plumbing, Heating, Cooling &amp; Electrical<br>
+    Farmington Hills, MI 48335 &middot; <a href="tel:+12482365999">(248) 236-5999</a>
+  </footer>
+</main>
+
+<!-- ServiceTitan online scheduler (same widget as ajdanboise.com) -->
+<script id="se-widget-embed" src="https://embed.scheduler.servicetitan.com/scheduler-v1.js"
+        data-api-key="bbshh1qfui8y0ir87mcjim66"
+        data-schedulerid="sched_j8vygcvfmlo59dddqp2eshs3"
+        data-defer="true" async></script>
+<script>
+  // Open the ServiceTitan scheduler. ServiceTitan only displays it on approved domains,
+  // so if it hasn't become visible shortly after clicking, send people to the main site.
+  var FALLBACK = 'https://ajdanboise.com/contact-us/?utm_source=links&utm_medium=social&utm_campaign=link_page';
+  function schedulerVisible() {
+    var f = document.querySelector('iframe[src*="scheduler.servicetitan.com"]');
+    if (!f) return false;
+    var host = f.parentElement;
+    return host && getComputedStyle(host).visibility !== 'hidden' && host.getBoundingClientRect().left > -1000;
+  }
+  document.getElementById('book').addEventListener('click', function () {
+    try {
+      if (window._scheduler && typeof window._scheduler.show === 'function') {
+        window._scheduler.show();
+        setTimeout(function () { if (!schedulerVisible()) window.location.href = FALLBACK; }, 1500);
+        return;
+      }
+    } catch (e) {}
+    window.location.href = FALLBACK;
+  });
+</script>
+</body>
+</html>
