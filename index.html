@@ -32,7 +32,7 @@
     --radius: 16px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
   body {
     min-height: 100vh;
     font-family: "Raleway", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -78,7 +78,7 @@
     padding: 9px 16px 9px 10px; border-radius: 999px;
     background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    font-size: 13.5px; font-weight: 600;
+    font-size: 13.5px; font-weight: 600; white-space: nowrap;
     transition: background .2s ease;
   }
   .rating:hover { background: rgba(255, 255, 255, 0.16); }
@@ -87,7 +87,7 @@
   .rating b { font-weight: 800; }
 
   /* ---------- Content ---------- */
-  main { position: relative; z-index: 2; max-width: 520px; margin: -56px auto 0; padding: 0 16px 40px; }
+  main { position: relative; z-index: 2; max-width: 520px; margin: -56px auto 0; padding: 0 max(16px, env(safe-area-inset-right)) calc(40px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
 
   .primary { display: grid; gap: 12px; }
   .btn {
@@ -97,7 +97,8 @@
     cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
   }
   .btn svg { width: 22px; height: 22px; flex: none; }
-  .btn:hover { transform: translateY(-2px); }
+  @media (hover: hover) { .btn:hover { transform: translateY(-2px); } }
+  .btn { touch-action: manipulation; }
   .btn:active { transform: translateY(0); }
   .btn-call {
     color: #fff; background: linear-gradient(180deg, var(--green-light), var(--green));
@@ -127,7 +128,8 @@
     box-shadow: 0 1px 2px rgba(0, 31, 99, 0.04), 0 6px 18px -10px rgba(0, 31, 99, 0.18);
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
-  .link:hover { transform: translateY(-2px); border-color: rgba(0, 50, 160, 0.28); box-shadow: 0 14px 28px -14px rgba(0, 31, 99, 0.35); }
+  .link:active { transform: scale(.985); }
+  @media (hover: hover) { .link:hover { transform: translateY(-2px); border-color: rgba(0, 50, 160, 0.28); box-shadow: 0 14px 28px -14px rgba(0, 31, 99, 0.35); } }
   .link .ico {
     width: 44px; height: 44px; border-radius: 12px; flex: none; display: grid; place-items: center;
     background: #EAF1F9; color: var(--blue);
@@ -140,7 +142,7 @@
   .link .t { font-weight: 800; font-size: 15.5px; color: var(--ink); }
   .link .d { font-size: 13px; font-weight: 500; color: var(--muted); margin-top: 2px; }
   .link .chev { width: 18px; height: 18px; color: #A3AEC2; flex: none; transition: transform .18s ease, color .18s ease; }
-  .link:hover .chev { transform: translateX(3px); color: var(--blue); }
+  @media (hover: hover) { .link:hover .chev { transform: translateX(3px); color: var(--blue); } }
   .link.feature { background: linear-gradient(135deg, #fff 0%, #FFFCE6 100%); border-color: rgba(240, 224, 69, 0.7); }
   .tag {
     display: inline-block; margin-left: 6px; padding: 2px 7px; border-radius: 6px; vertical-align: 2px;
@@ -165,10 +167,39 @@
   .trust b { display: block; font-family: "Arvo", Georgia, serif; font-size: 18px; color: var(--blue); }
   .trust span { display: block; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; }
 
+  .share {
+    margin-top: 28px; display: flex; align-items: center; gap: 16px;
+    padding: 16px; border-radius: var(--radius);
+    background: var(--card); border: 1px solid var(--card-border);
+    box-shadow: 0 1px 2px rgba(0, 31, 99, 0.04), 0 6px 18px -10px rgba(0, 31, 99, 0.18);
+  }
+  .share img { width: 104px; height: 104px; flex: none; border-radius: 10px; border: 1px solid rgba(0, 50, 160, 0.10); }
+  .share .t { display: block; font-weight: 800; font-size: 15.5px; }
+  .share .d { display: block; margin-top: 3px; font-size: 13px; font-weight: 500; color: var(--muted); line-height: 1.4; }
+  .share button {
+    margin-top: 10px; display: inline-flex; align-items: center; gap: 6px;
+    min-height: 40px; padding: 8px 16px; border: 0; border-radius: 999px; cursor: pointer;
+    font: 700 13px "Raleway", sans-serif; color: #fff; background: var(--blue);
+    transition: background .18s ease;
+  }
+  .share button:hover { background: var(--navy); }
+  .share button svg { width: 15px; height: 15px; }
   footer { margin-top: 26px; text-align: center; font-size: 12.5px; line-height: 1.6; color: var(--muted); }
   footer .mark { width: 34px; height: auto; display: block; margin: 0 auto 8px; opacity: .9; }
-  footer a { color: var(--blue); font-weight: 700; }
+  footer a { color: var(--blue); font-weight: 700; display: inline-block; padding: 8px 2px; }
 
+  @media (max-width: 360px) {
+    .hero { padding-top: 32px; }
+    .btn { font-size: 15.5px; padding: 12px 14px; gap: 10px; }
+    .link { padding: 12px 12px; gap: 12px; }
+    .link .ico { width: 40px; height: 40px; }
+    .share { flex-direction: column; text-align: center; }
+    .trust span { font-size: 10px; letter-spacing: 0; }
+    .rating { font-size: 12px; gap: 7px; padding: 8px 12px 8px 8px; }
+    .rating .stars { font-size: 12px; letter-spacing: 0; }
+    .btn small { font-size: 11px; }
+    .tag { margin-left: 0; }
+  }
   .reveal { opacity: 0; transform: translateY(10px); animation: in .5s ease forwards; }
   @keyframes in { to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) {
@@ -260,6 +291,18 @@
     <div><b>BBB</b><span>Accredited</span></div>
   </div>
 
+  <div class="share">
+    <img src="qr/ajd-links-qr-logo.svg" alt="QR code for links.ajdanboise.com" width="104" height="104">
+    <div>
+      <span class="t">Share with a neighbor</span>
+      <span class="d">Scan the code, or send this page to anyone who needs a plumber, HVAC tech or electrician.</span>
+      <button type="button" id="share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>
+        <span>Share link</span>
+      </button>
+    </div>
+  </div>
+
   <footer>
     <img class="mark" src="assets/aj-mark.svg" alt="" width="305" height="227">
     AJ Danboise Plumbing, Heating, Cooling &amp; Electrical<br>
@@ -291,6 +334,23 @@
       }
     } catch (e) {}
     window.location.href = FALLBACK;
+  });
+</script>
+<script>
+  // Native share sheet on phones; copy the link everywhere else.
+  document.getElementById('share').addEventListener('click', function () {
+    var url = 'https://links.ajdanboise.com';
+    var label = this.querySelector('span');
+    if (navigator.share) {
+      navigator.share({ title: 'AJ Danboise', text: 'Plumbing, heating, cooling & electrical: AJ Danboise', url: url }).catch(function () {});
+      return;
+    }
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function () {
+        label.textContent = 'Link copied!';
+        setTimeout(function () { label.textContent = 'Share link'; }, 2000);
+      });
+    }
   });
 </script>
 </body>
